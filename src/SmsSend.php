@@ -11,9 +11,9 @@ class SmsSend
     private $header;
     public function __construct($username = null, $password = null, $header = null)
     {
-        $this->username = $username ?? $_ENV['NETGSM_USERCODE'] ?? 'x';
-        $this->password = $password ?? $_ENV['NETGSM_PASSWORD'] ?? 'x';
-        $this->header = $header ?? $_ENV['NETGSM_HEADER'] ?? 'x';
+        $this->username = $username ?? env('NETGSM_USERCODE') ?? 'x';
+        $this->password = $password ?? env('NETGSM_PASSWORD') ?? 'x';
+        $this->header = $header ?? env('NETGSM_HEADER') ?? 'x';
     }
 
     public function smsSorgulama($data): array
